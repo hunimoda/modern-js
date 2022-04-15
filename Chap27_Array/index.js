@@ -73,3 +73,46 @@
 //console.log(sparse);
 //
 //console.log(Object.getOwnPropertyDescriptors(sparse));
+
+//// 예제 27-20
+//const arr = [1, , 3];
+//console.log(arr.length);
+//console.log(arr);
+//console.log(arr[1]);
+
+//// 예제 27-21
+//const arr = new Array(10);
+//console.log(arr);
+//console.log(arr.length);
+//console.log(Object.getOwnPropertyDescriptors(arr));
+
+//// 예제 27-23
+//console.log(new Array(2 ** 32 - 1).length);
+//console.log(new Array(2 ** 32).length);
+//console.log(new Array(-1).length);
+//console.log(new Array());
+//console.log(new Array(1, 2, 3));
+//console.log(new Array({}));
+//console.log(Array(1, 2, 3, 4));
+
+//// 예제 27-27
+//console.log(Array.of(1));
+//console.log(Array.of(1, 2, 3));
+//console.log(Array.of("string"));
+//console.log(Array.of({}));
+
+//// 예제 27-29
+//console.log(Array.from({ length: 3 }));
+//console.log(Array.from("hello"));
+//console.log(Array.from({ length: 3 }, (_, i) => i));
+
+// 예제 27-30
+const arrayLike = {
+	0: "apple",
+	1: "banana",
+	2: "orange",
+	length: 3,
+};
+for (let i = 0; i < arrayLike.length; i++) {
+	console.log(arrayLike[i]);
+}
