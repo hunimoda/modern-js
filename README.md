@@ -1,1 +1,1 @@
-"# Modern Javascript Deep Dive" 
+# Modern Javascript Deep Dive
