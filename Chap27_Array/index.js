@@ -106,13 +106,22 @@
 //console.log(Array.from("hello"));
 //console.log(Array.from({ length: 3 }, (_, i) => i));
 
-// 예제 27-30
-const arrayLike = {
-	0: "apple",
-	1: "banana",
-	2: "orange",
-	length: 3,
-};
-for (let i = 0; i < arrayLike.length; i++) {
-	console.log(arrayLike[i]);
-}
+//// 예제 27-30
+//const arrayLike = {
+//	0: "apple",
+//	1: "banana",
+//	2: "orange",
+//	length: 3,
+//};
+//for (let i = 0; i < arrayLike.length; i++) {
+//	console.log(arrayLike[i]);
+//}
+
+// 예제 27-31
+const arr = [1, 2, 3];
+console.log(arr[0]);
+console.log(arr[2]);
+console.log(arr[3]);
+
+const sparse = [1, , 3];
+console.log(sparse[1]);
