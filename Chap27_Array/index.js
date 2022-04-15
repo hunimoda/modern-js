@@ -117,11 +117,42 @@
 //	console.log(arrayLike[i]);
 //}
 
-// 예제 27-31
-const arr = [1, 2, 3];
-console.log(arr[0]);
-console.log(arr[2]);
-console.log(arr[3]);
+//// 예제 27-31
+//const arr = [1, 2, 3];
+//console.log(arr[0]);
+//console.log(arr[2]);
+//console.log(arr[3]);
+//
+//const sparse = [1, , 3];
+//console.log(sparse[1]);
 
-const sparse = [1, , 3];
-console.log(sparse[1]);
+//// 예제 27-34
+//const arr = [0];
+//
+//arr[1] = 1;
+//
+//console.log(arr);
+//console.log(arr.length);
+//
+//arr[100] = 100;
+//
+//console.log(arr);
+//console.log(arr.length);
+//
+//console.log(Object.getOwnPropertyDescriptors(arr));
+
+// 예제 27-38
+const arr = [];
+
+arr[0] = 1;
+arr["1"] = 2;
+
+console.log(arr);
+
+arr["foo"] = 3;
+arr.bar = 4;
+arr[1.1] = 5;
+arr[-1] = 6;
+
+console.log(arr);
+console.log(arr.length);
