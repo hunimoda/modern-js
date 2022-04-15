@@ -157,14 +157,152 @@
 //console.log(arr);
 //console.log(arr.length);
 
-// 예제 27-39
-const arr = [1, 2, 3];
+//// 예제 27-39
+//const arr = [1, 2, 3];
+//
+//delete arr[1];
+//console.log(arr);
+//console.log(arr.length);
+//
+//const arr2 = [1, 2, 3];
+//arr.splice(1, 1);
+//console.log(arr);
+//console.log(arr.length);
 
-delete arr[1];
-console.log(arr);
-console.log(arr.length);
+//// 예제 27-41
+//const arr = [1];
+//
+//arr.push(2);
+//console.log(arr);
+//
+//const result = arr.concat(3);
+//console.log(result);
+//console.log(arr);
 
-const arr2 = [1, 2, 3];
-arr.splice(1, 1);
-console.log(arr);
-console.log(arr.length);
+//// 예제 27-42
+//console.log(Array.isArray([]));
+//console.log(Array.isArray([1, 2]));
+//console.log(Array.isArray(new Array()));
+//
+//console.log(Array.isArray());
+//console.log(Array.isArray({}));
+//console.log(Array.isArray(null));
+//console.log(Array.isArray(undefined));
+//console.log(Array.isArray(1));
+//console.log(Array.isArray("Array"));
+//console.log(Array.isArray(true));
+//console.log(Array.isArray(false));
+//console.log(Array.isArray({ 0: 1, length: 1 }));
+
+//// 예제 27-43
+//const arr = [1, 2, 2, 3];
+//
+//console.log(arr.indexOf(2));
+//console.log(arr.indexOf(4));
+//console.log(arr.indexOf(2, 2));
+//
+//const foods = ["apple", "banana", "orange"];
+//
+//if (foods.indexOf("orange") === -1) {
+//	foods.push("orange");
+//}
+//
+//console.log(foods);
+//
+//if (!foods.includes("orange")) {
+//	foods.push("orange");
+//}
+//
+//console.log(foods);
+
+//// 예제 27-46
+//const arr = [1, 2];
+//let result = arr.push(3, 4);
+//
+//console.log(result);
+//console.log(arr);
+
+//// 예제 27-47
+//const arr = [1, 2];
+//
+//arr[arr.length] = 3;
+//console.log(arr);
+
+//// 예제 27-48
+//const arr = [1, 2];
+//const newArr = [...arr, 3];
+
+//console.log(arr);
+//console.log(newArr);
+
+//// 예제 27-49
+//const arr = [1, 2];
+//let result = arr.pop();
+//
+//console.log(result);
+//console.log(arr);
+
+// 예제 27-50
+//const Stack = (function () {
+//	function Stack(array = []) {
+//		if (!Array.isArray(array)) {
+//			throw new TypeError(`${array} is not an array.`);
+//		}
+//		this.array = array;
+//	}
+//
+//	Stack.prototype = {
+//		constructor: Stack,
+//		push(value) {
+//			this.array.push(value);
+//		},
+//		pop() {
+//			return this.array.pop();
+//		},
+//		entries() {
+//			return [...this.array];
+//		},
+//	};
+//
+//	return Stack;
+//})();
+//
+//const stack = new Stack([1, 2]);
+//console.log(stack.entries());
+//
+//stack.push(3);
+//console.log(stack.entries());
+//
+//stack.pop();
+//console.log(stack.entries());
+
+// 예제 27-51
+class Stack {
+	constructor(array) {
+		if (!Array.isArray(array)) {
+			throw new Error(`${array} is not an array.`);
+		}
+		this.array = array;
+	}
+
+	push(value) {
+		this.array.push(value);
+	}
+
+	pop() {
+		return this.array.pop();
+	}
+
+	entries() {
+		return [...this.array];
+	}
+}
+
+const stack = new Stack([1, 2, 3]);
+console.log(stack.entries());
+
+stack.push(4);
+console.log(stack.entries());
+
+stack.pop();
+console.log(stack.entries());
