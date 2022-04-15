@@ -141,18 +141,30 @@
 //
 //console.log(Object.getOwnPropertyDescriptors(arr));
 
-// 예제 27-38
-const arr = [];
+//// 예제 27-38
+//const arr = [];
+//
+//arr[0] = 1;
+//arr["1"] = 2;
+//
+//console.log(arr);
+//
+//arr["foo"] = 3;
+//arr.bar = 4;
+//arr[1.1] = 5;
+//arr[-1] = 6;
+//
+//console.log(arr);
+//console.log(arr.length);
 
-arr[0] = 1;
-arr["1"] = 2;
+// 예제 27-39
+const arr = [1, 2, 3];
 
+delete arr[1];
 console.log(arr);
+console.log(arr.length);
 
-arr["foo"] = 3;
-arr.bar = 4;
-arr[1.1] = 5;
-arr[-1] = 6;
-
+const arr2 = [1, 2, 3];
+arr.splice(1, 1);
 console.log(arr);
 console.log(arr.length);
