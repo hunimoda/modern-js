@@ -276,33 +276,263 @@
 //stack.pop();
 //console.log(stack.entries());
 
-// 예제 27-51
-class Stack {
-	constructor(array) {
-		if (!Array.isArray(array)) {
-			throw new Error(`${array} is not an array.`);
-		}
-		this.array = array;
-	}
+//// 예제 27-51
+//class Stack {
+//	constructor(array) {
+//		if (!Array.isArray(array)) {
+//			throw new Error(`${array} is not an array.`);
+//		}
+//		this.array = array;
+//	}
+//
+//	push(value) {
+//		this.array.push(value);
+//	}
+//
+//	pop() {
+//		return this.array.pop();
+//	}
+//
+//	entries() {
+//		return [...this.array];
+//	}
+//}
+//
+//const stack = new Stack([1, 2, 3]);
+//console.log(stack.entries());
+//
+//stack.push(4);
+//console.log(stack.entries());
+//
+//stack.pop();
+//console.log(stack.entries());
 
-	push(value) {
-		this.array.push(value);
-	}
+//// 예제 27-52
+//const arr = [1, 2];
+//let result = arr.unshift(3, 4);
+//
+//console.log(result);
+//console.log(arr);
+//
+//console.log([5, 6, ...arr]);
+//console.log(arr);
 
-	pop() {
-		return this.array.pop();
-	}
+//// 예제 27-54
+//const arr = [1, 2];
+//let result = arr.shift();
+//console.log(result);
+//console.log(arr);
 
-	entries() {
-		return [...this.array];
-	}
-}
+//// 예제 27-55
+//const Queue = (function () {
+//	const array = [];
+//
+//	function Queue() {}
+//
+//	Queue.prototype = {
+//		constructor: Queue,
+//		enqueue(value) {
+//			array.push(value);
+//		},
+//		dequeue() {
+//			return array.shift();
+//		},
+//		showEntries() {
+//			console.log(array);
+//		},
+//	};
+//
+//	return Queue;
+//})();
+//
+//const queue = new Queue();
+//
+//queue.showEntries();
+//
+//queue.enqueue(1);
+//queue.enqueue(2);
+//queue.showEntries();
+//
+//console.log(queue.dequeue());
+//queue.showEntries();
 
-const stack = new Stack([1, 2, 3]);
-console.log(stack.entries());
+//// 예제 27-56
+//class Queue {
+//	#array = [];
+//
+//	enqueue(value) {
+//		this.#array.push(value);
+//	}
+//
+//	dequeue() {
+//		return this.#array.shift();
+//	}
+//
+//	entries() {
+//		return [...this.#array];
+//	}
+//}
+//
+//const queue = new Queue();
+//
+//queue.enqueue(1);
+//queue.enqueue(2);
+//
+//const myQueue = queue.entries();
+//myQueue.push(3);
+//
+//console.log(queue.entries());
+//console.log(myQueue);
 
-stack.push(4);
-console.log(stack.entries());
+//// 예제 27-57
+//const arr1 = [1, 2];
+//const arr2 = [3, 4];
+//
+//let result = arr1.concat(arr2);
+//console.log(result);
+//
+//result = arr1.concat(3);
+//console.log(result);
+//
+//result = arr1.concat(arr2, 5);
+//console.log(result);
+//
+//console.log(arr1);
 
-stack.pop();
-console.log(stack.entries());
+//// 예제 27-58
+//const arr1 = [3, 4];
+//
+//arr1.unshift(1, 2);
+//console.log(arr1);
+//
+//arr1.push(5, 6);
+//console.log(arr1);
+//
+//const arr2 = [3, 4];
+//
+//let result = [1, 2].concat(arr2);
+//console.log(result);
+//
+//result = result.concat(5, 6);
+//console.log(result);
+
+//// 예제 27-61
+//const arr = [1, 2, 3, 4];
+//const result = arr.splice(1, 2, 20, 30);
+//
+//console.log(result);
+//console.log(arr);
+
+//// 예제 27-62
+//const arr = [1, 2, 3, 4];
+//const result = arr.splice(1, 0, 100);
+//
+//console.log(result);
+//console.log(arr);
+
+//// 예제 27-63
+//const arr = [1, 2, 3, 4];
+//const result = arr.splice(1, 2);
+//
+//console.log(result);
+//console.log(arr);
+
+//// 예제 27-64
+//const arr = [1, 2, 3, 4];
+//const result = arr.splice(1);
+//
+//console.log(result);
+//console.log(arr);
+
+//// 예제 27-65
+//const arr = [1, 2, 3, 1, 2];
+//
+//function remove(array, item) {
+//	if (!Array.isArray(array)) {
+//		throw new Error(`${array} is not an array.`);
+//	}
+//	const removeIndex = array.indexOf(item);
+//
+//	if (removeIndex !== -1) array.splice(removeIndex, 1);
+//
+//	return array;
+//}
+//
+//console.log(remove(arr, 2));
+//console.log(remove(arr, 3));
+
+//// 예제 27-65 변형
+//const arr = [1, 2, 3, 1, 2];
+//
+//Array.prototype.remove = function (item) {
+//	const removeIndex = this.indexOf(item);
+//
+//	if (removeIndex !== -1) this.splice(removeIndex, 1);
+//};
+//
+//arr.remove(2);
+//console.log(arr);
+//
+//arr.remove(1);
+//console.log(arr);
+//
+//Array.prototype.removed = function (item) {
+//	const copy = [...this];
+//	const removeIndex = copy.indexOf(item);
+//
+//	if (removeIndex !== -1) {
+//		copy.splice(removeIndex, 1);
+//	}
+//
+//	return copy;
+//};
+//
+//const original = [1, 2, 3, 1, 2];
+//
+//console.log(original.removed(3));
+//console.log(original.removed(2));
+//console.log(original);
+
+//// 예제 27-66
+//const arr = [1, 2, 3, 1, 2];
+//
+//Array.prototype.removeAll = function (item) {
+//	return this.filter((elem) => elem !== item);
+//};
+//
+//console.log(arr.removeAll(1));
+//console.log(arr.removeAll(3));
+//console.log(arr);
+
+//// 예제 27-67
+//const arr = [1, 2, 3];
+//
+//console.log(arr.slice(0, 1));
+//console.log(arr.slice(1, 2));
+//console.log(arr.slice(1));
+//console.log(arr.slice(-1));
+//console.log(arr.slice());
+//console.log(arr.slice() === arr);
+//console.log(arr);
+
+//// 예제 27-71
+//const todos = [
+//	{ id: 1, content: "HTML", completed: false },
+//	{ id: 2, content: "CSS", completed: true },
+//	{ id: 3, content: "Javascript", completed: false },
+//];
+//
+//const _todos = todos.slice();
+//
+//console.log(_todos === todos);
+//console.log(_todos[0] === todos[0]);
+
+//// 예제 27-72
+//function sum() {
+//	const arr = [...arguments];
+//	console.log(arr);
+//
+//	return arr.reduce((prev, sum) => prev + sum, 0);
+//}
+//
+//console.log(sum(1, 2, 3));
